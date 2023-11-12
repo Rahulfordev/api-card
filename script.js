@@ -20,11 +20,14 @@ function detailFun(data) {
     name,
     email,
     username,
-    address: { street, city },
+    phone,
+    website,
+    address: { street, city, zipcode },
+    company: { name: companyName },
   } = data;
   popUp.innerHTML = `
   <div class="pop-heading">
-   <h2>User Details Information</h2>
+   <h2 class="user-title">User Details Information</h2>
    <button class="close-info">&times;</button>
   </div>
   
@@ -35,6 +38,10 @@ function detailFun(data) {
   <h2>Email: ${email}</h2>
   <h2>Street: ${street}</h2>
   <h2>City: ${city}</h2>
+  <h2>Zip Code: ${zipcode}</h2>
+  <h2>Phone: ${phone}</h2>
+  <h2>WebSite: ${website}</h2>
+  <h2>Company: ${companyName}</h2>
     </dvi>
   </div>
   `;
@@ -66,7 +73,7 @@ function showData(userData) {
         <button class="card-btn" id="button" onclick="myFunction(${id})">Show Details</button>
         
        `;
-       
+
     rootDiv.appendChild(div);
   });
 }
