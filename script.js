@@ -1,3 +1,4 @@
+const cardPop = document.getElementById("card-pops");
 async function getData() {
   const url = "https://jsonplaceholder.typicode.com/users";
   const response = await fetch(url);
@@ -12,7 +13,7 @@ async function myFunction(id) {
   const data = await response.json();
   detailFun(data);
 }
-const cardPop = document.getElementById("card-pops");
+
 function detailFun(data) {
   const popUp = document.createElement("div");
   popUp.classList.add("card-pop");
@@ -75,5 +76,6 @@ function showData(userData) {
        `;
 
     rootDiv.appendChild(div);
+    cardPop.style.display = "block";
   });
 }
